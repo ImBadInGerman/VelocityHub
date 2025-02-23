@@ -8,6 +8,8 @@ import com.velocitypowered.api.plugin.Plugin
 import com.velocitypowered.api.proxy.ProxyServer
 import com.velocitypowered.api.proxy.server.RegisteredServer
 import de.fruxz.vhub.command.HubCommand
+import de.fruxz.vhub.command.DevCommand
+import de.fruxz.vhub.command.RpCommand
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.util.logging.Logger
@@ -35,6 +37,8 @@ class VelocityHub @Inject constructor(
         val commandManager = proxy.commandManager
 
         commandManager.register("hub", HubCommand.create(proxy))
+        commandManager.register("dev", DevCommand.create(proxy))
+        commandManager.register("rp", RpCommand.create(proxy))
 
     }
 
